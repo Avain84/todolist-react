@@ -8,7 +8,7 @@ function GuestLayout() {
           <Link to='/todolist-react/' className="logo">
             <h1 className="home">ONLINE TODO LIST</h1>
           </Link>
-          <img src="public/to-do-pic.png" alt="to-do-pic" />
+          <img src="to-do-pic.png" alt="to-do-pic" />
         </div>
         <Outlet />
       </div>
