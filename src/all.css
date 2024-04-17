@@ -1,0 +1,476 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  color: #333333;
+  background-color: #FFD370;
+}
+
+input {
+  display: block;
+}
+input:focus {
+  background-color: #fff;
+}
+input:active {
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+  outline: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    gap: 105px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.wrap {
+  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+@media (min-width: 768px) {
+  .wrap {
+    height: 100vh;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+  }
+}
+
+.vbhidden {
+  visibility: hidden;
+}
+
+.dphidden {
+  display: none !important;
+}
+
+.home {
+  font-family: "Kanit", "Noto Sans TC", sans-serif;
+  position: relative;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.5625;
+  margin-left: 40px;
+}
+.home::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  background: url("./../public/check.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 5px;
+  left: -42px;
+}
+
+.title {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .title {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.title img {
+  max-width: 100%;
+  display: none;
+  margin-top: 15px;
+}
+@media (min-width: 768px) {
+  .title img {
+    display: block;
+  }
+}
+
+main {
+  min-width: 304px;
+}
+
+.home-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.45;
+  margin-bottom: 32px;
+}
+@media (min-width: 768px) {
+  .home-title {
+    font-size: 24px;
+  }
+}
+
+form div + div {
+  margin-top: 16px;
+}
+form label {
+  font-size: 14px;
+  line-height: 1.44;
+  font-weight: 700;
+}
+form input {
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 3px;
+  font-size: 16px;
+  line-height: 1.44;
+  padding: 12px 16px;
+  background-color: #fff;
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+}
+form .alert {
+  color: #D87355;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.44;
+}
+
+.home-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.btn-lg {
+  padding: 12px 48px;
+  background-color: #333333;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.44;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.btn-sm {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.44;
+  color: #333333;
+}
+
+.sign-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.45;
+  margin-bottom: 26px;
+}
+
+.inside {
+  min-height: 100vh;
+}
+@media (min-width: 768px) {
+  .inside {
+    background: linear-gradient(-5deg, #fff 47%, #FFD370 47%) center center/100% 100% no-repeat;
+  }
+}
+
+header {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  header {
+    padding-bottom: 40px;
+  }
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .home {
+  font-size: 24px;
+  margin-left: 35px;
+}
+nav .home::before {
+  width: 35px;
+  height: 35px;
+  top: 2px;
+  left: -35px;
+}
+
+.member {
+  display: flex;
+  gap: 24px;
+}
+.member .user {
+  display: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+@media (min-width: 768px) {
+  .member .user {
+    display: block;
+  }
+}
+.member a {
+  color: #333333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.mylist .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add {
+  margin-bottom: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+@media (min-width: 768px) {
+  .add {
+    width: 500px;
+  }
+}
+.add .add-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: calc(100% - 40px);
+}
+.add .add-btn {
+  padding-top: 4px;
+  margin-right: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 10px;
+}
+.add .add-btn:hover {
+  background-color: #FFD370;
+  color: #000;
+}
+
+.no-event {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .no-event {
+    margin-top: 44px;
+  }
+}
+
+.todo {
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .todo {
+    max-width: 500px;
+  }
+}
+
+.event {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.list-menu {
+  display: flex;
+  margin-bottom: 7px;
+}
+.list-menu li {
+  width: 33.3%;
+}
+.list-menu button {
+  border-bottom: 2px solid #EFEFEF;
+  color: #9F9A91;
+  width: 100%;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.45;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.list-menu .list-menu-active {
+  border-color: #333333;
+  color: #333333;
+}
+
+.todolist {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.todolist li {
+  border-bottom: 1px solid #E5E5E5;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.todolist .state {
+  width: 20px;
+}
+.todolist .state .undone {
+  font-size: 20px;
+  color: #9F9A91;
+}
+.todolist .state .done {
+  font-size: 20px;
+  color: #FFD370;
+}
+.todolist .undone-event {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.todolist .done-event {
+  font-size: 14px;
+  line-height: 1.45;
+  text-decoration: line-through;
+}
+.todolist .list-del {
+  display: none;
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.about-list {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.about-list .undone-count {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.about-list .clear-done {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #9F9A91;
+}
+
+.add,
+.event {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.listitem:hover .list-del {
+  display: block;
+}
