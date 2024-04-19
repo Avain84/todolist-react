@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { signupAPI } from "../apis/urls";
 import axios from "axios";
 
 function SignupPage() {
   const { register, handleSubmit, formState: { errors }, watch, reset } = useForm();
   const password = watch("password");
+  const navigate = useNavigate();
   const onSubmit = data => {
     // 創建要打API的資料
     const {email,nickname,password} = data;
@@ -16,7 +17,7 @@ function SignupPage() {
     const signup = async () => {
       try {
         const response = await axios.post(signupAPI,signupData);
-        console.log(response.data);
+        alert(response.data.message);
         reset();
       } catch (error) {
         if(error.response.status === 422){
