@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
-import { signupAPI } from "../apis/urls";
 import axios from "axios";
+
+import { signupAPI } from "../apis/urls";
 
 function SignupPage() {
   const { register, handleSubmit, formState: { errors }, watch, reset } = useForm();
@@ -98,17 +99,10 @@ function SignupPage() {
 
         <div className="home-btn">
           <button type="submit" className="btn-lg">註冊帳號</button>
-          <Link to='/todolist-react/'>登入</Link>
+          <Link to='/todolist-react/' className="btn-sm">登入</Link>
         </div>
       </form>
-
     </main>
-
-    // <>
-    // <p>Signup</p>
-    // <Link to='../'>回首頁</Link>
-    // <Link to='../todo'>TODO</Link>
-    // </>
   );
 }
 
