@@ -19,6 +19,7 @@ function SignupPage() {
         const response = await axios.post(signupAPI,signupData);
         alert(response.data.message);
         reset();
+        navigate('/todolist-react/');
       } catch (error) {
         if(error.response.status === 422){
           alert(error.response.data.error[0])
