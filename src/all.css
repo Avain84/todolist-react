@@ -306,7 +306,7 @@ nav .home::before {
     display: block;
   }
 }
-.member a {
+.member button {
   color: #333333;
   font-size: 16px;
   font-weight: 400;

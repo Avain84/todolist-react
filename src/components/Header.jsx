@@ -1,13 +1,19 @@
-import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { signoutAPI } from "../apis/urls";
 
 function Header() {
   const navigate= useNavigate();
+  const token = window.localStorage.getItem('token');
+  const config = {
+    headers: { authorization: token},
+  };
+
   return(
     <header>
       <div className="wrapper">
         <nav>
           <button type="button" onClick={()=>{
-            const token = window.localStorage.getItem('token');
             if(token){
               navigate('/todolist-react/todo');
             }else{
@@ -18,7 +24,21 @@ function Header() {
           </button>
           <div className="member">
             {window.localStorage.getItem('nickname') && <h2 className="user">{window.localStorage.getItem('nickname')}的待辦</h2>}
-            <Link to='/todolist-react/' onClick={() => window.localStorage.clear()}>登出</Link>
+            <button type="button" onClick={() => {
+              const signout = async () => {
+                try {
+                  const response = await axios.delete(signoutAPI,config);
+                  alert(response.data.message);
+                  window.localStorage.clear();
+                  navigate('/todolist-react/');
+                } catch (error) {
+                  alert('登出失敗');
+                }
+              };
+              signout();
+            }}>
+              登出
+            </button>
           </div>
         </nav>
       </div>
