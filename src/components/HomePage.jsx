@@ -16,9 +16,9 @@ function HomePage() {
       try {
         const response = await axios.post(signinAPI,signinData);
         alert(response.data.message);
-        reset();
         window.localStorage.setItem('token', response.headers.authorization);
         window.localStorage.setItem('nickname', response.data.nickname);
+        reset();
         navigate('/todolist-react/todo');
       } catch (error) {
         if(error.response.status === 401){
@@ -43,7 +43,7 @@ function HomePage() {
               message: "此欄位不可為空"
             },
             pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              value: /^\S+@\S+$/i,
               message: "Email格式錯誤"
             }
           })} />

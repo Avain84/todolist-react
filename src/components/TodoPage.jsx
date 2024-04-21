@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { testAPI } from "../apis/urls";
+
 import Header from "./Header";
 import AddList from "./AddList";
 import TodoList from "./TodoList";
-import { testAPI } from "../apis/urls";
 
 function TodoPage() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ function TodoPage() {
     };
     try {
       const response = await axios.get(testAPI,config);
-      console.log(response);
+      // console.log(response);
       alert("歡迎回來");
     } catch (error) {
       alert(error.response.data.message);
@@ -30,9 +31,11 @@ function TodoPage() {
   return (
     <>
       <Header />
-      <main>
-        <AddList />
-        <TodoList />
+      <main className="mylist">
+        <div className="wrapper">
+          <AddList />
+          <TodoList />
+        </div>
       </main>
     </>
   );

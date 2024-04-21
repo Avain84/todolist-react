@@ -44,7 +44,7 @@ function SignupPage() {
               message: "此欄位不可為空"
             },
             pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              value: /^\S+@\S+$/i,
               message: "Email格式錯誤"
             }
           })} />
