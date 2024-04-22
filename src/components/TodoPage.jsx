@@ -41,17 +41,17 @@ function TodoPage() {
     checkToken();
     getList();
   },[]);
-  
+
   return (
-    <body className="inside">
+    <div className="inside">
       <Header />
       <main className="mylist">
         <div className="wrapper">
           <AddList getList={getList} />
-          <TodoList todos={todos} />
+          <TodoList todos={todos} config={config} getList={getList} />
         </div>
       </main>
-    </body>
+    </div>
   );
 }
 

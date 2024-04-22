@@ -1,3 +1,6 @@
+import axios from "axios";
+import { todosAPI } from "../apis/urls";
+
 function NoList() {
   return (
     <div className="no-event">
@@ -7,7 +10,7 @@ function NoList() {
   );
 }
 
-function List({todos}) {
+function List({todos,config,getList}) {
   return(
     <div className="event">
       <ul className="list-menu">
@@ -19,7 +22,17 @@ function List({todos}) {
         {
           todos.map((todo)=> (
             <li className="listitem" id={todo.id} key={todo.id}>
-              <div className="state state-btn">
+              <div className="state state-btn" onClick={()=> {
+                async function toggleState() {
+                  try {
+                    await axios.patch(`${todosAPI}/${todo.id}/toggle`,todo.id,config);
+                    getList();
+                  } catch (error) {
+                    console.log(error);
+                  }
+                }
+                toggleState();
+              }}>
                 {
                   todo.completed_at?
                   <button className="done state-btn"><i className="state-btn fa-solid fa-check"></i></button>
@@ -47,11 +60,11 @@ function List({todos}) {
   )
 }
 
-function TodoList({todos}) {
+function TodoList({todos,config,getList}) {
   return(
     <section className="todo">
       {
-        todos && todos.length > 0 ? <List todos={todos} />:<NoList />
+        todos && todos.length > 0 ? <List todos={todos} config={config} getList={getList} />:<NoList />
       }
     </section>
   );
