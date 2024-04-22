@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 import { todosAPI } from '../apis/urls';
 import axios from 'axios';
 
-function AddList() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+function AddList({getList}) {
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const onSubmit = data => {
     const newList = {
       "todo": data
@@ -15,8 +15,10 @@ function AddList() {
     };
     async function postList() {
       try {
-        const response = await axios.post(todosAPI,newList,config)
+        await axios.post(todosAPI,newList,config)
         alert("新增成功")
+        getList();
+        reset();
       } catch (error) {
         console.log("發生錯誤，請重新嘗試");
       }
