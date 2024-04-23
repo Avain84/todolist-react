@@ -46,7 +46,19 @@ function List({todos,config,getList}) {
                 :
                 <p className="undone-event">{todo.content}</p>
               }
-              <button className="list-del"><i className="list-del fa-solid fa-xmark"></i></button>
+              <button className="list-del" onClick={() => {
+                console.log("click");
+                async function deleteList() {
+                  try {
+                    const response = await axios.delete(`${todosAPI}/${todo.id}`,config);
+                    alert(response.data.message);
+                    getList();
+                  } catch (error) {
+                    console.log(error);
+                  }
+                }
+                deleteList();
+              }}><i className="list-del fa-solid fa-xmark"></i></button>
             </li>
             )
           )
