@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import axios from "axios";
 import { todosAPI } from "../apis/urls";
+// import { NavLink } from "react-router-dom";
 
 function NoList() {
   return (
@@ -11,12 +13,20 @@ function NoList() {
 }
 
 function List({todos,config,getList}) {
+  // const listMenu = ['全部','待完成','已完成'];
   return(
     <div className="event">
       <ul className="list-menu">
         <li><button className="all list-menu-active" name="alltodo">全部</button></li>
         <li><button name="undonetodo">待完成</button></li>
         <li><button name="donetodo">已完成</button></li>
+        {
+          // listMenu.map((btn) => (
+          //   <li key={btn}>
+          //     <NavLink>{btn}</NavLink>
+          //   </li>
+          // ))
+        }
       </ul>
       <ul className="todolist">
         {

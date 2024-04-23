@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 // import React from 'react';
 import { useForm } from 'react-hook-form';
 import { todosAPI } from '../apis/urls';
 import axios from 'axios';
 
 function AddList({getList}) {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
     const newList = {
       "todo": data

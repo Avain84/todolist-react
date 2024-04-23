@@ -9,9 +9,9 @@ function GuestLayout() {
         <button type="button" onClick={()=>{
             const token = window.localStorage.getItem('token');
             if(token){
-              navigate('/todolist-react/todo');
+              navigate('/todo');
             }else{
-              navigate('/todolist-react/');
+              navigate('/');
             }
           }}>
             <h1 className="home">ONLINE TODO LIST</h1>

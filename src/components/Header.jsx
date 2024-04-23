@@ -15,9 +15,9 @@ function Header() {
         <nav>
           <button type="button" onClick={()=>{
             if(token){
-              navigate('/todolist-react/todo');
+              navigate('/todo');
             }else{
-              navigate('/todolist-react/');
+              navigate('/');
             }
           }}>
             <h1 className="home">ONLINE TODO LIST</h1>
@@ -30,7 +30,7 @@ function Header() {
                   const response = await axios.delete(signoutAPI,config);
                   alert(response.data.message);
                   window.localStorage.clear();
-                  navigate('/todolist-react/');
+                  navigate('/');
                 } catch (error) {
                   alert('登出失敗');
                 }

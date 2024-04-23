@@ -19,7 +19,7 @@ function HomePage() {
         window.localStorage.setItem('token', response.headers.authorization);
         window.localStorage.setItem('nickname', response.data.nickname);
         reset();
-        navigate('/todolist-react/todo');
+        navigate('/todo');
       } catch (error) {
         if(error.response.status === 401){
           alert(error.response.data.message);
@@ -69,7 +69,7 @@ function HomePage() {
         </div>
         <div className="home-btn">
           <button type="submit" className="btn-lg">登入</button>
-          <Link to='/todolist-react/signup' className="btn-sm">註冊帳號</Link>
+          <Link to='/signup' className="btn-sm">註冊帳號</Link>
         </div>
       </form>
     </main>

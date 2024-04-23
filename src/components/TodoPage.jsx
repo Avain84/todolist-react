@@ -10,6 +10,7 @@ import TodoList from "./TodoList";
 function TodoPage() {
   const navigate = useNavigate();
   const [todos,setTodos] = useState([]);
+  // const [isLogin,setIsLogin] = useState(false);
   
   const token = window.localStorage.getItem('token');
   const config = {
@@ -20,10 +21,11 @@ function TodoPage() {
     try {
       await axios.get(testAPI,config);
       alert("歡迎回來");
+      // setIsLogin(true);
     } catch (error) {
       alert(error.response.data.message);
       window.localStorage.clear();
-      navigate('/todolist-react/');
+      navigate('/');
     }
   }
 
