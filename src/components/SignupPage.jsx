@@ -20,7 +20,7 @@ function SignupPage() {
         const response = await axios.post(signupAPI,signupData);
         alert(response.data.message);
         reset();
-        navigate('/todolist-react/');
+        navigate('/');
       } catch (error) {
         if(error.response.status === 422){
           alert(error.response.data.error[0])
@@ -44,7 +44,7 @@ function SignupPage() {
               message: "此欄位不可為空"
             },
             pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              value: /^\S+@\S+$/i,
               message: "Email格式錯誤"
             }
           })} />
@@ -99,7 +99,7 @@ function SignupPage() {
 
         <div className="home-btn">
           <button type="submit" className="btn-lg">註冊帳號</button>
-          <Link to='/todolist-react/' className="btn-sm">登入</Link>
+          <Link to='/' className="btn-sm">登入</Link>
         </div>
       </form>
     </main>
