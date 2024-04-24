@@ -220,7 +220,7 @@ form .alert {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 24px;
 }
 
 .btn-lg {
@@ -306,7 +306,7 @@ nav .home::before {
     display: block;
   }
 }
-.member a {
+.member button {
   color: #333333;
   font-size: 16px;
   font-weight: 400;
@@ -405,7 +405,7 @@ nav .home::before {
   padding-top: 16px;
   padding-bottom: 16px;
 }
-.list-menu .list-menu-active {
+.list-menu button.active {
   border-color: #333333;
   color: #333333;
 }

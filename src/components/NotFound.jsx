@@ -2,10 +2,10 @@ import { Link } from "react-router-dom"
 
 function NotFound() {
   return(
-    <>
-      <p>無此頁面路徑</p>
-      <Link to='/todolist-react/'>回首頁</Link>
-    </>
+    <main style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+      <h2 className="home-title">無此頁面路徑</h2>
+      <Link to='/' className="btn-lg">回首頁</Link>
+    </main>
   )
 }
 
