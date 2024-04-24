@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
 import { todosAPI } from "../apis/urls";
-// import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function NoList() {
   return (
@@ -13,24 +14,38 @@ function NoList() {
 }
 
 function List({todos,config,getList}) {
-  // const listMenu = ['全部','待完成','已完成'];
+  const listMenu = ['全部','待完成','已完成'];
+  const [active,setActive] = useState('全部');
+
+  const handleList = (state) => setActive(() => state);
+
+  const filterTodos = () => {
+    switch (active) {
+      case '待完成':
+        return todos.filter(todo => !todo.completed_at);
+      case '已完成':
+        return todos.filter(todo => todo.completed_at);
+      default:
+        return todos;
+    }
+  }
+
   return(
     <div className="event">
       <ul className="list-menu">
-        <li><button className="all list-menu-active" name="alltodo">全部</button></li>
-        <li><button name="undonetodo">待完成</button></li>
-        <li><button name="donetodo">已完成</button></li>
         {
-          // listMenu.map((btn) => (
-          //   <li key={btn}>
-          //     <NavLink>{btn}</NavLink>
-          //   </li>
-          // ))
+          listMenu.map((btn) => (
+            <li key={btn}>
+              <button className={active === btn? 'active':''} onClick={()=> handleList(btn)}>
+                { btn }
+              </button>
+            </li>
+          ))
         }
       </ul>
       <ul className="todolist">
         {
-          todos.map((todo)=> (
+          filterTodos().map((todo)=> (
             <li className="listitem" id={todo.id} key={todo.id}>
               <div className="state state-btn" onClick={()=> {
                 async function toggleState() {
@@ -75,7 +90,9 @@ function List({todos,config,getList}) {
         }
       </ul>
       <div className="about-list">
-        <div className="undone-count"></div>
+        <div className="undone-count">{
+          todos.filter(todo => !todo.completed_at).length
+        } 個待完成項目</div>
         <button className="clear-done">清除已完成項目</button>
       </div>
     </div>

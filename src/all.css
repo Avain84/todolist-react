@@ -405,7 +405,7 @@ nav .home::before {
   padding-top: 16px;
   padding-bottom: 16px;
 }
-.active {
+.list-menu button.active {
   border-color: #333333;
   color: #333333;
 }
